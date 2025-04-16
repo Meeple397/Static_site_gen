@@ -1,1 +1,2 @@
 # Static_site_gen
+Did the first bit of this project without connection to github, so had to delete everything and start over here.  Future Isaac, make sure github is working first before you start next time!

@@ -4,6 +4,7 @@ from markdown_blocks import (
     markdown_to_blocks, 
     block_to_block_type, 
     BlockType,
+    extract_title,
 )
 
 
@@ -64,6 +65,17 @@ This is the same paragraph on a new line
         self.assertEqual(block_to_block_type(block), BlockType.OLIST)
         block = "paragraph"
         self.assertEqual(block_to_block_type(block), BlockType.PARAGRAPH)
+    
+    def test_extract_title(self):
+        md = """
+#  This is a working title
+This is **bolded** paragraph
+text in a p
+tag here
+
+"""
+        self.assertEqual(extract_title(md), "This is a working title")
+    
 
     def test_paragraph(self):
         md = """
